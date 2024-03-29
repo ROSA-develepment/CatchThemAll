@@ -1,0 +1,3 @@
+[submodule "turtlesimcatchthemall/rosa"]
+    path = turtlesimcatchthemall/rosa
+    url = git@github.com:ROSA-develepment/ROSA.git
