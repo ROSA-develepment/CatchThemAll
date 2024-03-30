@@ -3,17 +3,16 @@
 
 
 TurtleSpawnerNode::TurtleSpawnerNode()
-    : rclcpp::Node("turtle_spawner")
+    : Node("turtle_spawner")
     , _catchTurtleService(this, "catch_turtle", &_turtles)
     , _spawnTurtleClient(this, "spawn")
-    , _turtleArrayPublisher(this)
+    , _turtleArrayPublisher(this, "alive_turtles")
     , _turtleName("turtle")
     , _turtleCounter(2)
 {
     declare_parameter("spawn_frequency", 1);
     auto spawnFrequency = get_parameter("spawn_frequency").as_int();
 
-    _turtleArrayPublisher.publishOn("alive_turtles");
     _timer.createWallTimer(this, std::chrono::seconds(spawnFrequency), &TurtleSpawnerNode::generateTurtle);
 }
 

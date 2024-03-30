@@ -8,15 +8,14 @@
 #include "interfaces/msg/turtle.hpp"
 #include "interfaces/msg/turtle_array.hpp"
 
+#include "rosa/node/Node.h"
 #include "rosa/timer/Timer.h"
-
-#include "rclcpp/rclcpp.hpp"
 
 
 using Turtle = interfaces::msg::Turtle;
 using TurtleArray = interfaces::msg::TurtleArray;
 
-class TurtleControllerNode : public rclcpp::Node
+class TurtleControllerNode : public Node
 {
     enum class CatchOrder
     {

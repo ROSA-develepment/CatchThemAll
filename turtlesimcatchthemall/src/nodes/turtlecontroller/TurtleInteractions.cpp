@@ -1,17 +1,14 @@
 
 #include "TurtleInteractions.h"
 
-#include <utility>
 
-
-TurtleInteractions::TurtleInteractions(rclcpp::Node* parent)
+TurtleInteractions::TurtleInteractions(Node* parent)
     : _catchTurtleClient(parent, "catch_turtle")
-    , _turtleSimPublisher(parent)
+    , _turtleSimPublisher(parent, "turtle1/cmd_vel")
     , _turtleSimSubscriber(parent)
     , _turtleSpawnSubscriber(parent)
     , _parent(parent)
 {
-    _turtleSimPublisher.publishOn("turtle1/cmd_vel");
     _turtleSimSubscriber.subscribe("turtle1/pose", [this](Pose::SharedPtr const& message) { callback(message); });
     _turtleSpawnSubscriber.subscribe("alive_turtles", [this](TurtleArray::SharedPtr const& message) { callback(message); });
     waitForTurtleArray();

@@ -4,7 +4,7 @@
 #include <utility>
 
 
-CatchTurtleClient::CatchTurtleClient(rclcpp::Node* node, std::string const& serviceName)
+CatchTurtleClient::CatchTurtleClient(Node* node, std::string const& serviceName)
     : Client(node, serviceName)
 {
 

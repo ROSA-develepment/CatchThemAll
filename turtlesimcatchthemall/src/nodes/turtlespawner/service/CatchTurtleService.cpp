@@ -2,7 +2,7 @@
 #include "CatchTurtleService.h"
 
 
-CatchTurtleService::CatchTurtleService(rclcpp::Node* parent, const std::string& serviceName, TurtleArray* turtles)
+CatchTurtleService::CatchTurtleService(Node* parent, const std::string& serviceName, TurtleArray* turtles)
     : Service(parent, serviceName)
     , _killTurtle(parent, "kill")
     , _turtles(turtles)

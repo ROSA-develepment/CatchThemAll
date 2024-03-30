@@ -10,7 +10,6 @@
 
 #include "turtlesim/msg/pose.hpp"
 #include "geometry_msgs/msg/twist.hpp"
-#include <rclcpp/node.hpp>
 
 
 using TurtleArray = interfaces::msg::TurtleArray;
@@ -20,7 +19,7 @@ using Twist = geometry_msgs::msg::Twist;
 class TurtleInteractions
 {
 public:
-    explicit TurtleInteractions(rclcpp::Node* parent);
+    explicit TurtleInteractions(Node* parent);
 
     void sendMovement(Twist message);
     void sendCatchTurtleRequest(Turtle const& cachedTurtle);
@@ -42,7 +41,7 @@ private:
     Pose _currentPosition;
     TurtleArray _turtles;
 
-    rclcpp::Node::SharedPtr _parent;
+    Node::SharedPtr _parent;
 };
 
 #endif //ROS_TURTLEINTERACTIONS_H

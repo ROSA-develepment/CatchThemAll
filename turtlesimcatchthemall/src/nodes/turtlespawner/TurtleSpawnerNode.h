@@ -2,19 +2,19 @@
 #ifndef ROS_TURTLESPAWNERNODE_H
 #define ROS_TURTLESPAWNERNODE_H
 
+#include <rosa/node/Node.h>
 #include <rosa/publisher/Publisher.h>
 #include <rosa/timer/Timer.h>
 
 #include "interfaces/msg/turtle_array.hpp"
 
-#include "rclcpp/rclcpp.hpp"
 #include "clients/SpawnTurtleClient.h"
 #include "service/CatchTurtleService.h"
 
 
 using TurtleArray = interfaces::msg::TurtleArray;
 
-class TurtleSpawnerNode : public rclcpp::Node
+class TurtleSpawnerNode : public Node
 {
 public:
     TurtleSpawnerNode();

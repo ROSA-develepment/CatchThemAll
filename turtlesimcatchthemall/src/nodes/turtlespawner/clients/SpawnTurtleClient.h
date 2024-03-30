@@ -5,7 +5,8 @@
 #include "interfaces/msg/turtle.hpp"
 
 #include <rosa/client/Client.h>
-#include "rclcpp/rclcpp.hpp"
+#include <rosa/node/Node.h>
+
 #include "turtlesim/srv/spawn.hpp"
 
 using Turtle = interfaces::msg::Turtle;
@@ -14,7 +15,7 @@ using Spawn = turtlesim::srv::Spawn;
 class SpawnTurtleClient : public Client<Spawn>
 {
 public:
-    SpawnTurtleClient(rclcpp::Node* node, std::string const& serviceName);
+    SpawnTurtleClient(Node* node, std::string const& serviceName);
 
     void setRequest(Turtle const& turtleToSpawn);
 

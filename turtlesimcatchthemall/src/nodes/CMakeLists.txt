@@ -13,12 +13,11 @@ endif()
 #|-----------------------------------------------------|
 
 set(DEPENDENCIES
+        ament_cmake
         interfaces
         rosa
         turtlesim
         geometry_msgs
-        rclcpp
-        ament_cmake
 )
 
 foreach (DEPENDENCY ${DEPENDENCIES})
@@ -45,6 +44,7 @@ foreach (EXECUTABLE ${EXECUTABLES})
   )
 endforeach ()
 
-add_subdirectory(nodes)
+add_subdirectory(turtlecontroller)
+add_subdirectory(turtlespawner)
 
 ament_package()

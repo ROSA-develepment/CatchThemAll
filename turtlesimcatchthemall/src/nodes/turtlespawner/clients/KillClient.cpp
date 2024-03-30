@@ -3,7 +3,7 @@
 #include "KillClient.h"
 
 
-KillClient::KillClient(rclcpp::Node *parent, const std::string &serviceName)
+KillClient::KillClient(Node *parent, const std::string &serviceName)
     : Client(parent, serviceName)
 {
 

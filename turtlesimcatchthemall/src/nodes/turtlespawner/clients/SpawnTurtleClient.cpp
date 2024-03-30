@@ -2,7 +2,7 @@
 #include "SpawnTurtleClient.h"
 
 
-SpawnTurtleClient::SpawnTurtleClient(rclcpp::Node *node, const std::string &serviceName)
+SpawnTurtleClient::SpawnTurtleClient(Node *node, const std::string &serviceName)
     : Client(node, serviceName)
 {
 }

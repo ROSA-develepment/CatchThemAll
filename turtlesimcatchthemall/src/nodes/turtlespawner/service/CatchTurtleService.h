@@ -3,8 +3,10 @@
 #define ROS_CATCHTURTLESERVICE_H
 
 #include <rosa/service/Service.h>
-#include "rclcpp/rclcpp.hpp"
+#include <rosa/node/Node.h>
+
 #include "interfaces/srv/catch_turtle.hpp"
+
 #include "../clients/KillClient.h"
 #include "interfaces/msg/turtle_array.hpp"
 #include "interfaces/msg/turtle.hpp"
@@ -17,7 +19,7 @@ using CatchTurtle = interfaces::srv::CatchTurtle;
 class CatchTurtleService : public Service<CatchTurtle>
 {
 public:
-    CatchTurtleService(rclcpp::Node* parent, std::string const& serviceName, TurtleArray* turtles);
+    CatchTurtleService(Node* parent, std::string const& serviceName, TurtleArray* turtles);
 
 private:
     void processRequest(CatchTurtle::Request::SharedPtr request,

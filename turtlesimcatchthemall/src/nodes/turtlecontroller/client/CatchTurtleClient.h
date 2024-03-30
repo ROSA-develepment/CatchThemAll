@@ -13,7 +13,7 @@ using CatchTurtle = interfaces::srv::CatchTurtle;
 class CatchTurtleClient : public Client<CatchTurtle>
 {
 public:
-    CatchTurtleClient(rclcpp::Node* parentNode, std::string const& serviceName);
+    CatchTurtleClient(Node* parentNode, std::string const& serviceName);
 
     void setRequest(Turtle const& catchedTurtle);
 
